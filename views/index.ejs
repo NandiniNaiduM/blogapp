@@ -10,62 +10,96 @@
 </head>
 
 <body>
+    <nav>
+
+    <div class="logo">📝 My Blog</div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#create-blog">Create Blog</a></li>
+
+    </ul>
+
+</nav>
 
     <header>
 
-        <h1>My Blog</h1>
+        <h1>📝 My Blog</h1>
 
         <p>Share Your Thoughts With The World</p>
 
+        <h3>Write • Publish • Inspire</h3>
+
+        <a href="#create-blog" class="hero-btn">
+            Create New Blog
+        </a>
+
     </header>
+
+    <div class="form-container" id="create-blog">
+
+        <h2>✍ Create New Blog</h2>
+
+        <p class="form-text">
+            Share your thoughts and ideas with everyone.
+        </p>
+
+        <form action="/add-blog" method="POST">
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter Blog Title"
+                required>
+
+            <textarea
+                name="content"
+                placeholder="Write your blog..."
+                rows="5"
+                required></textarea>
+
+            <button type="submit">
+                🚀 Publish Blog
+            </button>
+
+        </form>
+
+    </div>
 
     <div class="container">
 
-        <% blogs.forEach(blog=> { %>
+        <h2 class="blog-heading">📚 Latest Blogs</h2>
+
+        <% blogs.forEach(blog => { %>
 
             <div class="card">
 
-    <h2><%= blog.title %></h2>
+                <h2>🌟 <%= blog.title %></h2>
 
-    <p><%= blog.content %></p>
+                <p><%= blog.content %></p>
 
-    <form action="/delete-blog/<%= blog._id %>" method="POST">
+                <form action="/delete-blog/<%= blog._id %>" method="POST">
 
-        <button class="delete-btn">
+                    <button class="delete-btn">
+                        Delete
+                    </button>
 
-            Delete
+                </form>
 
-        </button>
+            </div>
 
-    </form>
-
-</div>
         <% }) %>
 
     </div>
-    <div class="form-container">
+    <footer>
 
-    <form action="/add-blog" method="POST">
+    <p>
+        © 2026 Blog Application | Developed by Nandini Naidu
+    </p>
 
-        <input
-            type="text"
-            name="title"
-            placeholder="Enter Blog Title"
-            required>
-
-        <textarea
-            name="content"
-            placeholder="Write your blog..."
-            rows="5"
-            required></textarea>
-
-        <button type="submit">
-            Publish Blog
-        </button>
-
-    </form>
-
-</div>
+</footer>
 
 </body>
 
