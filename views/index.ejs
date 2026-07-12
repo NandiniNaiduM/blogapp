@@ -28,13 +28,17 @@
 
         <h1>📝 My Blog</h1>
 
-        <p>Share Your Thoughts With The World</p>
+        <p>Write • Share • Inspire</p>
 
-        <h3>Write • Publish • Inspire</h3>
+<h3>Create and manage your blogs with Docker.</h3>
 
-        <a href="#create-blog" class="hero-btn">
-            Create New Blog
-        </a>
+<p class="hero-subtitle">
+    ✨ Simple • Secure • Dockerized Blog Application
+</p>
+
+<a href="#create-blog" class="hero-btn">
+    🚀 Create Blog
+</a>
 
     </header>
 
@@ -68,9 +72,23 @@
 
     </div>
 
-    <div class="container">
+   <div class="container">
 
-        <h2 class="blog-heading">📚 Latest Blogs</h2>
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h2><%= blogs.length %></h2>
+
+            <p>Total Blogs</p>
+
+        </div>
+
+    </div>
+
+    <h2 class="blog-heading">📚 Latest Blogs</h2>
+
+        
 
         <% blogs.forEach(blog => { %>
 
@@ -78,14 +96,17 @@
 
                 <h2>🌟 <%= blog.title %></h2>
 
+<p class="date">
+📅 Created Today
+</p>
+
                 <p><%= blog.content %></p>
 
                 <form action="/delete-blog/<%= blog._id %>" method="POST">
 
-                    <button class="delete-btn">
-                        Delete
-                    </button>
-
+                 <button class="delete-btn">
+    🗑 Delete
+</button>
                 </form>
 
             </div>
@@ -93,11 +114,13 @@
         <% }) %>
 
     </div>
-    <footer>
+   <footer>
 
-    <p>
-        © 2026 Blog Application | Developed by Nandini Naidu
-    </p>
+    <h3>📝 Blog Application Using Docker</h3>
+
+    <p>Developed by Nandini Naidu</p>
+
+    <p>© 2026 All Rights Reserved</p>
 
 </footer>
 
